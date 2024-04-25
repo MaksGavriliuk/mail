@@ -1,1 +1,15 @@
-spring.application.name=mail
+spring:
+  application:
+    name: mail
+  mail:
+    host: smtp.gmail.com
+    username: student.service.bsuir@gmail.com
+    password: StudentServiceBsuir397681
+    port: 587
+  kafka:
+    bootstrap-servers: localhost:9092
+    topic: notifications-topic
+    consumer:
+      group-id: notifications-group
+server:
+  port: 8081
