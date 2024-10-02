@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mail
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+    depends_on:
+      - postgres
+    ports:
+      - '8050:8050'
+    external_links:
+      - eureka-server:eureka-server
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    external: true
